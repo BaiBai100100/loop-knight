@@ -1553,7 +1553,10 @@ function text(str, x, y, size, color, align = 'center', weight = 'bold') {
   ctx.textAlign = align;
   ctx.textBaseline = 'middle';
   ctx.fillStyle = color;
-  ctx.fillText(str, x, y);
+  // the CSS-px font floor can make long lines wider than the screen on narrow
+  // viewports; maxWidth squeezes them to stay on-canvas
+  const room = align === 'left' ? W - x : align === 'right' ? x : 2 * Math.min(x, W - x);
+  ctx.fillText(str, x, y, Math.max(40, room - 24));
 }
 
 function drawHUD() {
