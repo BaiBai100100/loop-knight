@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="bg" cx="32" cy="30.7" r="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a1240"/>
+      <stop offset="1" stop-color="#05050b"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="56" y1="50" x2="22" y2="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6ffff"/>
+      <stop offset=".45" stop-color="#8ffcff"/>
+      <stop offset="1" stop-color="#c9a6ff" stop-opacity=".15"/>
+    </linearGradient>
+    <radialGradient id="core">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".45" stop-color="#e6ffff"/>
+      <stop offset="1" stop-color="#8ffcff"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x=".25" y=".25" width="63.5" height="63.5" rx="14" fill="url(#bg)" stroke="#8ffcff" stroke-opacity=".27" stroke-width=".5"/>
+  <g filter="url(#glow)">
+    <path d="M54.22 26.05A23 23 0 1 1 37.95 9.78" fill="none" stroke="url(#ring)" stroke-width="4.6"/>
+    <path d="M52.25 17.48L60.65 25.39L48.17 28.27Z" fill="#e6ffff"/>
+    <circle cx="26.56" cy="37.44" r="5.6" fill="#ff4dc4" fill-opacity=".27" stroke="#ff4dc4" stroke-width="2.2" opacity=".85"/>
+    <path d="M38.54 25.46L46.38 17.62" stroke="#8ffcff" stroke-width="3.8" stroke-linecap="round"/>
+    <circle cx="36.16" cy="27.84" r="6.7" fill="url(#core)"/>
+  </g>
+</svg>
