@@ -1,6 +1,6 @@
 // Loop Knight service worker. Bump VERSION on every release so old caches are dropped.
 // All URLs are relative to this file, so it works at / and under /loop-knight/.
-const VERSION = 'v1.0.2';
+const VERSION = 'v1.0.3';
 const CACHE = 'loop-knight-' + VERSION;
 const PRECACHE = [
   './',

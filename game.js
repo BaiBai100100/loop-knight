@@ -1547,7 +1547,8 @@ function wrapText(str, maxW, size, weight = 'normal') {
   return lines;
 }
 // 論理pxの文字サイズを、画面上で MIN_FONT_CSS 未満にならないよう底上げ
-const fontPx = (size) => Math.max(size, MIN_FONT_CSS / cssScale);
+// cap the boost at 1.35x: real phones (>=568px landscape) need less, and tiny windows would otherwise blow the layout apart
+const fontPx = (size) => Math.max(size, Math.min(size * 1.35, MIN_FONT_CSS / cssScale));
 function text(str, x, y, size, color, align = 'center', weight = 'bold') {
   ctx.font = `${weight} ${fontPx(size)}px ${FONT}`;
   ctx.textAlign = align;
